@@ -5,9 +5,9 @@
 
 .GUID 
 
-.AUTHOR Michael Niehaus / Fabian Niesen
+.AUTHOR Fabian Niesen / based on Michael Niehaus (Microsoft)
 
-.COMPANYNAME Microsoft
+.COMPANYNAME 
 
 .COPYRIGHT
 
@@ -51,7 +51,6 @@ HelpMessage = 'Please enter Choosen Prefix'
 )
 IF ($LogFilePath.EndsWith("\") -like "False") { $LogFilePath =$LogFilePath+"\" }
 IF (!(Test-Path $LogFilePath)) { new-item -Path $LogFilePath -ItemType directory -Force }
-$dayDateTime = (Get-Date -UFormat "%A %d-%m-%Y %R")
 $LogFilePath = $LogFilePath + $(get-date -format yyyyMMdd-HHmm) + "-" + $MyInvocation.ScriptName + ".log"
 
 Function Write-Log {
