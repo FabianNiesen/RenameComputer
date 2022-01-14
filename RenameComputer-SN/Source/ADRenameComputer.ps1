@@ -192,13 +192,13 @@ else
     }
 
     # Copy myself to a safe place if not already there
-    if (-not (Test-Path "$dest\RenameComputer.ps1"))
+    if (-not (Test-Path "$dest\ADRenameComputer.ps1"))
     {
-        Copy-Item $PSCommandPath "$dest\RenameComputer.PS1"
+        Copy-Item $PSCommandPath "$dest\ADRenameComputer.PS1"
     }
 
     # Create the scheduled task action
-    $action = New-ScheduledTaskAction -Execute "Powershell.exe" -Argument "-NoProfile -ExecutionPolicy bypass -WindowStyle Hidden -File $dest\RenameComputer.ps1"
+    $action = New-ScheduledTaskAction -Execute "Powershell.exe" -Argument "-NoProfile -ExecutionPolicy bypass -WindowStyle Hidden -File $dest\ADRenameComputer.ps1"
 
     # Create the scheduled task trigger
     $timespan = New-Timespan -minutes 5
