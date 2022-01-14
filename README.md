@@ -18,3 +18,6 @@ For a detection rule, specify the path and file and "File or folder exists" dete
 %ProgramData%\Microsoft\RenameComputer RenameComputer.ps1.tag
 
 Deploy the app as a required app to an appropriate set of devices.
+
+# RenameComputer
+Customize Script to use Serialnumber instead of Azure Hook for counting
